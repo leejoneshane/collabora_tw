@@ -8,6 +8,7 @@ RUN chmod +x /*.sh \
     && apt-get -y install apt-transport-https \
     && echo "deb https://collaboraoffice.com/repos/CollaboraOnline/CODE /" > /etc/apt/sources.list.d/collabora.list \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 6CCEA47B2281732DF5D504D00C54D189F4BA284D \
+    && apt-get update \
     && apt-get -y install loolwsd code-brand collaboraoffice6.0-dict* collaboraofficebasis6.0* inotify-tools psmisc \
     && apt-get -y install locales locales-all fonts-linuxlibertine ttf-linux-libertine ttf-mscorefonts-installer msttcorefonts \
     && rm -rf /var/lib/apt/lists/* \
