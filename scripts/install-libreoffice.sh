@@ -4,7 +4,7 @@
 apt-get update && apt-get -y upgrade
 
 # Install HTTPS transport
-apt-get -y install apt-transport-https
+apt-get -y install apt-transport-https apt-utils
 
 # Install locales
 apt-get -y install locales locales-all
