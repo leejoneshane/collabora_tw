@@ -17,6 +17,7 @@ RUN chmod +x /*.sh \
 
 ENV LC_ALL zh_TW.UTF-8
 ENV LANG zh_TW.UTF-8
+WORKDIR /usr/share/loolwsd
 
 EXPOSE 9980
 
