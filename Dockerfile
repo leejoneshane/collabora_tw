@@ -27,7 +27,7 @@ RUN chmod +x /*.sh \
     && cp -Rp /usr/share/fonts/truetype/msttcorefonts/* /opt/collaboraoffice$corever/share/fonts/truetype \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /etc/loolwsd/proof_key* \
-    && adduser --quiet --system --group --home /opt/lool lool && \
+    && adduser --quiet --system --group --home /opt/lool lool \
     && chown lool:lool /opt/lool/systemplate/etc/hosts /opt/lool/systemplate/etc/resolv.conf \
     && chown -R lool:lool /opt/lool /etc/loolwsd
 
