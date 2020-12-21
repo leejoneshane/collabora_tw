@@ -17,7 +17,7 @@ RUN chmod +x /*.sh \
     && echo "deb https://collaboraoffice.com/repos/CollaboraOnline/CODE /" > /etc/apt/sources.list.d/collabora.list \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 6CCEA47B2281732DF5D504D00C54D189F4BA284D \
     && apt-get update \
-    && apt-get -y install libpng12-0 \
+    && apt-get -y install libpng12-0 rvm \
     && /usr/share/rvm/scripts/rvm install libssl1.0.0 \
     && apt-get -y install loolwsd code-brand collaboraoffice$corever-dict-* collaboraofficebasis$corever-* inotify-tools psmisc \
     && apt-get -y install fonts-linuxlibertine \
