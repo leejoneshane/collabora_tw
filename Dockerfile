@@ -25,10 +25,15 @@ RUN chmod +x /*.sh \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install msttcorefonts fontconfig \
     && fc-cache -f -v \
     && cp -Rp /usr/share/fonts/truetype/msttcorefonts/* /opt/collaboraoffice$corever/share/fonts/truetype \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /etc/loolwsd/proof_key* \
+    && adduser --quiet --system --group --home /opt/lool lool && \
+    && chown lool:lool /opt/lool/systemplate/etc/hosts /opt/lool/systemplate/etc/resolv.conf \
+    && chown -R lool:lool /opt/lool /etc/loolwsd
 
 WORKDIR /usr/share/loolwsd
 
 EXPOSE 9980
+USER lool
 
 CMD /start-libreoffice.sh
