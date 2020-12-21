@@ -11,8 +11,9 @@ RUN chmod +x /*.sh \
     && ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata locales locales-all \
     && locale-gen "zh_TW.UTF-8" \
-    && apt-get -y install software-properties-common apt-utils apt-transport-https dialog gnupg2 ca-certificates \
-    && add-apt-repository -y ppa:linuxuprising/libpng12 ppa:rael-gc/rvm \
+    && apt-get -y install software-properties-common apt-utils apt-transport-https gnupg2 ca-certificates \
+    && add-apt-repository -y ppa:linuxuprising/libpng12 \
+    && add-apt-repository -y ppa:rael-gc/rvm \
     && echo "deb https://collaboraoffice.com/repos/CollaboraOnline/CODE /" > /etc/apt/sources.list.d/collabora.list \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 6CCEA47B2281732DF5D504D00C54D189F4BA284D \
     && apt-get update \
